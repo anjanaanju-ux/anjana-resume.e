@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anjana - Resume</title>
+
+    <style>
+
+        /* ================= A4 PAGE ================= */
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #dfe3e8;
+            color: #222;
+        }
+
+        .resume {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 14mm 16mm;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-bottom: 12px;
+            border-bottom: 3px solid #5b2aa8;
+        }
+
+        .header-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .header-left h1 {
+            font-size: 30px;
+            letter-spacing: 1.5px;
+            color: #241c42;
+            margin-bottom: 5px;
+        }
+
+        .header-left h3 {
+            font-size: 13px;
+            color: #673ab7;
+            margin-bottom: 9px;
+            font-weight: 600;
+        }
+
+        .contact {
+            font-size: 9px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .contact a {
+            color: #5b2aa8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+
+        /* ================= PHOTO ================= */
+
+        .photo-box {
+            width: 92px;
+            height: 112px;
+            flex-shrink: 0;
+            border: 3px solid #5b2aa8;
+            padding: 3px;
+            background: white;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+
+        /* ================= MAIN CONTENT ================= */
+
+        .content {
+            display: grid;
+            grid-template-columns: 34% 66%;
+            margin-top: 13px;
+        }
+
+
+        /* ================= LEFT COLUMN ================= */
+
+        .left {
+            padding-right: 16px;
+            border-right: 1px solid #ddd;
+        }
+
+
+        /* ================= RIGHT COLUMN ================= */
+
+        .right {
+            padding-left: 17px;
+        }
+
+
+        /* ================= SECTION ================= */
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            color: #5b2aa8;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+
+            border-bottom: 1.5px solid #ddd2f4;
+        }
+
+        p,
+        li {
+            font-size: 9px;
+            line-height: 1.45;
+            color: #444;
+        }
+
+        ul {
+            padding-left: 14px;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+            font-size: 9.2px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        .education {
+            margin-bottom: 7px;
+        }
+
+        .education h3 {
+            font-size: 10px;
+            color: #2d2452;
+            margin-bottom: 2px;
+        }
+
+        .education p {
+            font-size: 8.8px;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skill {
+            margin-bottom: 6px;
+        }
+
+        .skill strong {
+            display: block;
+            font-size: 9px;
+            color: #35245f;
+            margin-bottom: 1px;
+        }
+
+        .skill span {
+            font-size: 8.7px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+
+        /* ================= TAGS ================= */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .tag {
+            background: #eee8fb;
+            color: #5727a1;
+            padding: 4px 6px;
+            border-radius: 8px;
+            font-size: 7.8px;
+            font-weight: bold;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .project {
+            margin-bottom: 8px;
+        }
+
+        .project h3 {
+            font-size: 10px;
+            color: #302450;
+            margin-bottom: 2px;
+        }
+
+        .project li {
+            font-size: 8.8px;
+        }
+
+
+        /* ================= CERTIFICATIONS ================= */
+
+        .certificate {
+            background: #f7f4fc;
+            border-left: 3px solid #6d3fc1;
+            padding: 5px 7px;
+            margin-bottom: 4px;
+            font-size: 8.5px;
+            color: #444;
+        }
+
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievement-list li {
+            font-size: 8.8px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .footer {
+            margin-top: 5px;
+            padding-top: 6px;
+
+            border-top: 1px solid #ddd;
+
+            text-align: center;
+
+            font-size: 7.5px;
+            color: #888;
+        }
+
+
+        /* ================= PRINT ================= */
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .resume {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            body {
+                background: white;
+            }
+
+            .resume {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 12px;
+                margin-bottom: 12px;
+            }
+
+            .right {
+                padding-left: 0;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+
+        <div class="header-left">
+
+            <h1>ANJANA</h1>
+
+            <h3>
+                B.Tech – Artificial Intelligence & Data Science
+            </h3>
+
+
+            <div class="contact">
+
+                📍 Chennai, Tamil Nadu
+                &nbsp; | &nbsp;
+
+                📱 +91 98765 43210
+
+                <br>
+
+                📧 anjana.dev@example.com
+
+                &nbsp; | &nbsp;
+
+                🔗
+                <a href="https://www.linkedin.com/" target="_blank">
+                    LinkedIn
+                </a>
+
+                &nbsp; | &nbsp;
+
+                💻
+                <a href="https://github.com/" target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- YOUR PHOTO -->
+
+        <div class="photo-box">
+
+            <img
+                src="Anju copy.jpeg"
+                alt="Anjana">
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <div class="content">
+
+
+        <!-- ================= LEFT ================= -->
+
+        <aside class="left">
+
+
+            <!-- PROFILE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Profile
+                </h2>
+
+                <p class="profile">
+
+                    Enthusiastic B.Tech Artificial Intelligence and
+                    Data Science student interested in programming,
+                    data analysis, AI/ML and software development.
+                    Passionate about learning new technologies and
+                    creating practical solutions.
+
+                </p>
+
+            </section>
+
+
+            <!-- EDUCATION -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Education
+                </h2>
+
+
+                <div class="education">
+
+                    <h3>
+                        B.Tech – AI & Data Science
+                    </h3>
+
+                    <p>
+                        <strong>Rathinam Technical Campus</strong>
+                    </p>
+
+                    <p>
+                        2025 – Present
+                    </p>
+
+                </div>
+
+
+                <div class="education">
+
+                    <h3>
+                        Higher Secondary Education
+                    </h3>
+
+                    <p>
+                        Your School Name
+                    </p>
+
+                    <p>
+                        2025
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- TECHNICAL SKILLS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Technical Skills
+                </h2>
+
+
+                <div class="skill">
+
+                    <strong>Programming</strong>
+
+                    <span>
+                        Python, Java
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>Web Development</strong>
+
+                    <span>
+                        HTML, CSS, JavaScript
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>Data Structures</strong>
+
+                    <span>
+                        Arrays, Strings, Stack, Queue, Linked List
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>Database</strong>
+
+                    <span>
+                        SQL – Beginner
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>AI / ML</strong>
+
+                    <span>
+                        Basic Artificial Intelligence &
+                        Machine Learning
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>Tools</strong>
+
+                    <span>
+                        GitHub, VS Code, Figma, Canva
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOFT SKILLS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Soft Skills
+                </h2>
+
+                <div class="tags">
+
+                    <span class="tag">Problem Solving</span>
+
+                    <span class="tag">Teamwork</span>
+
+                    <span class="tag">Communication</span>
+
+                    <span class="tag">Creativity</span>
+
+                    <span class="tag">Quick Learning</span>
+
+                    <span class="tag">Adaptability</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- LANGUAGES -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Languages
+                </h2>
+
+                <p>English</p>
+                <p>Tamil</p>
+
+            </section>
+
+
+            <!-- INTERESTS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Areas of Interest
+                </h2>
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Artificial Intelligence
+                    </span>
+
+                    <span class="tag">
+                        Machine Learning
+                    </span>
+
+                    <span class="tag">
+                        Data Analysis
+                    </span>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        UI/UX Design
+                    </span>
+
+                </div>
+
+            </section>
+
+
+        </aside>
+
+
+
+        <!-- ================= RIGHT ================= -->
+
+        <main class="right">
+
+
+            <!-- CAREER OBJECTIVE -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Career Objective
+                </h2>
+
+                <p>
+
+                    Motivated and enthusiastic B.Tech Artificial
+                    Intelligence and Data Science student seeking
+                    opportunities to develop technical skills and gain
+                    practical experience in programming, artificial
+                    intelligence, data analysis and software development.
+
+                </p>
+
+            </section>
+
+
+
+            <!-- PROJECTS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Projects
+                </h2>
+
+
+                <div class="project">
+
+                    <h3>
+                        AI Specialized Tools Exploration
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Explored GitHub Copilot, Canva AI,
+                            Replit AI, Kickresume and Suno AI.
+                        </li>
+
+                        <li>
+                            Studied AI applications in software
+                            development, design and content generation.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>
+                        Solar-Assisted Drying System for Agarbatti
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Designed a solar-assisted drying chamber
+                            with controlled temperature and airflow.
+                        </li>
+
+                        <li>
+                            Proposed Arduino monitoring, LCD display
+                            and buzzer alerts.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>
+                        EvidenceHire – Resume Verification System
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Designed a system to identify duplicate
+                            or potentially fraudulent resumes.
+                        </li>
+
+                        <li>
+                            Used Python, Streamlit and SQLite.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- CERTIFICATIONS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Certifications
+                </h2>
+
+
+                <div class="certificate">
+                    Python Programming – Certification
+                </div>
+
+                <div class="certificate">
+                    AI / ML Fundamentals – Certification
+                </div>
+
+                <div class="certificate">
+                    RPA Fundamentals – Certification
+                </div>
+
+            </section>
+
+
+
+            <!-- ACHIEVEMENTS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Achievements & Activities
+                </h2>
+
+                <ul class="achievement-list">
+
+                    <li>
+                        Participated in technical and academic projects
+                        related to AI and Data Science.
+                    </li>
+
+                    <li>
+                        Practiced programming problems involving
+                        data structures and algorithms.
+                    </li>
+
+                    <li>
+                        Participated in team-based technical activities
+                        and presentations.
+                    </li>
+
+                    <li>
+                        Explored AI-powered productivity and
+                        development tools.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+
+            <!-- ADDITIONAL -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    Additional Skills
+                </h2>
+
+                <p>
+
+                    Basic Data Visualization • Problem Solving •
+                    Software Development • Creative Design •
+                    Technical Presentation
+
+                </p>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        HARINISHA &nbsp; • &nbsp;
+        B.Tech Artificial Intelligence & Data Science
+        &nbsp; • &nbsp; Chennai, Tamil Nadu
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
